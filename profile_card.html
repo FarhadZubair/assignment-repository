@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/1b9ed54fb6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+    <style>
+      :root {
+        --title-font: "Barlow Condensed", sans-serif;
+        --text-font: "Monserrat", sans-serif;
+        --chocolate-color: #3b2415;
+        --yellow-color: #f6aa1c;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        position: relative;
+        background-color: #c5cae9;
+        height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+
+      .card {
+        background-color: #fff;
+        width: 347px;
+        height: 425px;
+        border-radius: 5px;
+        box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+      }
+
+      .card header {
+        width: 100%;
+        height: 60px;
+        background-color: var(--yellow-color);
+
+        position: relative;
+      }
+
+      .card header::before,
+      .card header::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: inherit;
+      }
+
+      .card header::before {
+        transform: skewY(-8deg);
+        transform-origin: 100% 100%;
+      }
+
+      .card header::after {
+        transform: skewY(8deg);
+        transform-origin: 0 100%;
+      }
+
+      .card header .avatar {
+        position: absolute;
+        left: 50%;
+        top: 30px;
+        margin-left: -50px;
+        z-index: 5;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        background: #ccc;
+        border: 3px solid #fff;
+      }
+
+      .card header .avatar img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: auto;
+      }
+
+      .card h3 {
+        position: relative;
+        margin: 80px 0 10px;
+        text-align: center;
+        font-family: var(--title-font);
+        font-weight: bolder;
+        font-size: 25px;
+      }
+
+      .card h5 {
+        position: relative;
+        margin: 5px 0 30px;
+        text-align: center;
+        font-family: var(--text-font);
+      }
+
+      .card h5::after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        margin-left: -17px;
+        width: 30px;
+        height: 1px;
+        background: #000;
+      }
+
+      .card .desc {
+        padding: 0 1rem 2rem;
+        text-align: center;
+        line-height: 1.5;
+        color: #777;
+        font-family: var(--text-font);
+        font-weight: 100;
+      }
+
+      .card .contacts {
+        width: 295px;
+        max-width: 100%;
+        margin: 0 auto 2rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-family: var(--text-font);
+      }
+
+      .card .contacts a {
+        display: block;
+        width: 33.333333%;
+        float: left;
+        text-align: center;
+        color: var(--chocolate-color);
+        text-decoration: none;
+        font-size: x-small;
+      }
+      ion-icon {
+        padding-right: 4px;
+      }
+
+      .card .contacts a:hover {
+        color: #333;
+      }
+
+      .card .contacts a:hover .fa::before {
+        color: #000;
+      }
+      /* .card .contacts a:hover .fa::after {
+  width: 100%;
+  height: 100%;
+} */
+
+      /* .card .contacts a .fa {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  line-height: 39px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 1.3em;
+} */
+
+      /* .card .contacts a .fa:before {
+  position: relative;
+  z-index: 1;
+} */
+      .card .contacts a:before {
+        position: relative;
+        z-index: 1;
+      }
+
+      .card .contacts a .fa::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        transform: translate(-50%, -50%);
+        background: var(--chocolate-color);
+        transition: width 0.3s, height 0.3s;
+      }
+
+      .card .contacts a:last-of-type .fa {
+        line-height: 36px;
+      }
+      .card footer {
+        position: relative;
+        padding: 1rem;
+        background-color: var(--chocolate-color);
+        text-align: center;
+      }
+      .card footer a {
+        padding: 0 1rem;
+        color: #e2e2e2;
+        transition: color 0.4s;
+      }
+      .card footer a:hover {
+        color: var(--yellow-color);
+      }
+      .card footer::before {
+        content: "";
+        position: absolute;
+        top: -27px;
+        left: 50%;
+        margin-left: -15px;
+        border: 15px solid transparent;
+        border-bottom-color: var(--chocolate-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <header>
+          <div class="avatar">
+            <img
+              src="https://i.ibb.co/bmgmJzY/profile.jpg"
+              alt="profile"
+              border="0"
+            />
+          </div>
+        </header>
+        <h3 style="color: var(--chocolate-color)">Farhad Zubair</h3>
+        <h5 style="color: var(--chocolate-color)">Web Developer</h5>
+        <div class="desc">
+          Farhad Zubair is an expert PHP developer, skilled in creating dynamic,
+          robust, and user-friendly web applications.
+        </div>
+        <div class="contacts">
+          <a href=""><ion-icon name="call"></ion-icon>01819324018</a>
+          <a href=""><ion-icon name="mail"></ion-icon>farhad@gmail.com</a>
+        </div>
+        <footer>
+          <a href=""><i class="fa fa-facebook"></i></a>
+          <a href=""><i class="fa fa-linkedin"></i></a>
+          <a href=""><i class="fa fa-twitter"></i></a>
+          <a href=""><i class="fa fa-instagram"></i></a>
+        </footer>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
